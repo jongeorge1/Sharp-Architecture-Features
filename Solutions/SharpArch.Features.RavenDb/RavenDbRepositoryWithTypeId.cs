@@ -6,26 +6,38 @@ namespace SharpArch.Features.RavenDb
 
     using Raven.Client;
 
-    using SharpArch.Core.DomainModel;
-    using SharpArch.Core.PersistenceSupport.RavenDb;
+    using SharpArch.Domain.DomainModel;
+    using SharpArch.Features.RavenDb.Contracts.Repositories;
 
     public class RavenDbRepositoryWithTypeId<T, TIdT> : IRavenDbRepositoryWithTypeId<T, TIdT> where T : Entity
     {
+        #region Constants and Fields
+
         private readonly IDocumentSession context;
+
+        #endregion
+
+        #region Constructors and Destructors
 
         public RavenDbRepositoryWithTypeId(IDocumentSession context)
         {
             this.context = context;
         }
 
+        #endregion
+
+        #region Implemented Interfaces
+
+        #region IRavenDbRepositoryWithTypeId<T,TIdT>
+
         public IEnumerable<T> FindAll(Func<T, bool> where)
         {
-            return this.context.Query<T>().Where<T>(where);
+            return this.context.Query<T>().Where(where);
         }
 
         public T FindOne(Func<T, bool> where)
         {
-            var foundList = this.context.Query<T>().Where<T>(where);
+            IEnumerable<T> foundList = this.context.Query<T>().Where(where);
 
             if (foundList.Count() > 1)
             {
@@ -42,7 +54,17 @@ namespace SharpArch.Features.RavenDb
 
         public T First(Func<T, bool> where)
         {
-            return this.context.Query<T>().First<T>(where);
+            return this.context.Query<T>().First(where);
+        }
+
+        #endregion
+
+        #region IRepositoryWithTypedId<T,TIdT>
+
+        public void Delete(T entity)
+        {
+            this.context.Delete(entity);
+            this.context.SaveChanges();
         }
 
         public T Get(TIdT id)
@@ -63,10 +85,8 @@ namespace SharpArch.Features.RavenDb
             return entity;
         }
 
-        public void Delete(T entity)
-        {
-            this.context.Delete(entity);
-            this.context.SaveChanges();
-        }
+        #endregion
+
+        #endregion
     }
 }

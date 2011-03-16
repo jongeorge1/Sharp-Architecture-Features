@@ -91,6 +91,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Repositories\IRavenDbRepository.cs" />
+    <Compile Include="Contracts\Repositories\IRavenDbRepositoryWithTypeId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RavenDbRepository.cs" />
     <Compile Include="RavenDbRepositoryWithTypeId.cs" />

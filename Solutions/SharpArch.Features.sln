@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArch.Features.RavenDb", "SharpArch.Features.RavenDb\SharpArch.Features.RavenDb.csproj", "{867D128C-E854-4B51-8040-0A1499A76820}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArch.Features.NHibernate", "SharpArch.Features.NHibernate\SharpArch.Features.NHibernate.csproj", "{55498A0B-080B-42BD-BF45-6C1EC9090973}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArch.Features.Tests", "SharpArch.Features.Tests\SharpArch.Features.Tests.csproj", "{59403041-E342-46DA-8589-07C7FAFDD921}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{867D128C-E854-4B51-8040-0A1499A76820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{867D128C-E854-4B51-8040-0A1499A76820}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{867D128C-E854-4B51-8040-0A1499A76820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55498A0B-080B-42BD-BF45-6C1EC9090973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55498A0B-080B-42BD-BF45-6C1EC9090973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55498A0B-080B-42BD-BF45-6C1EC9090973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55498A0B-080B-42BD-BF45-6C1EC9090973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59403041-E342-46DA-8589-07C7FAFDD921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59403041-E342-46DA-8589-07C7FAFDD921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59403041-E342-46DA-8589-07C7FAFDD921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59403041-E342-46DA-8589-07C7FAFDD921}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
